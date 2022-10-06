@@ -6,11 +6,13 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 10:22:28 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/06 10:40:01 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/06 14:32:45 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 
