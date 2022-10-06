@@ -6,11 +6,11 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:13 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/05 13:19:10 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/06 10:40:59 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (65 <= c && c <= 90)
 		return (c + 32);

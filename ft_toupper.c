@@ -6,11 +6,11 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:11 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/05 13:19:10 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/06 10:41:02 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (97 <= c && c <= 122)
 		return (c - 32);

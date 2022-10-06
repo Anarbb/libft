@@ -6,13 +6,13 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:41 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/05 13:19:10 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/06 10:40:53 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
