@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 21:29:11 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/07 11:40:33 by aarbaoui         ###   ########.fr       */
+/*   Created: 2022/10/06 22:55:40 by aarbaoui          #+#    #+#             */
+/*   Updated: 2022/10/07 12:20:18 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	while (*s++)
+	size_t ret;
+	ret = ft_strlen(src);
+	
+	if (ret + 1 < dstsize)
 	{
-		if (*s == '\0')
-			break ;
-		if (*s == c)
-		{
-			return ((char *)s);
-		}
+		ft_memcpy(dst, src, ret + 1);
 	}
-	return (NULL);
+	else if (dstsize != 0) {
+		ft_memcpy(dst, src, ret - 1);
+		dst[ret - 1] = '\0';
+	}
+	return (ret);
 }
