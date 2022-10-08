@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/08 11:10:25 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/08 12:27:26 by aarbaoui         ###   ########.fr       */
+/*   Created: 2022/10/08 11:33:26 by aarbaoui          #+#    #+#             */
+/*   Updated: 2022/10/08 11:44:50 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char		*dest;
+	const char	*sc;
 
-	dest = dst + ft_strlen(dst);
-	if (dstsize <= ft_strlen(dst))
-		return (ft_strlen(src) + dstsize);
-	while (*src && dstsize > ft_strlen(dst) + 1)
-	{
-		*dest++ = *src++;
-	}
-	*dest = '\0';
-	return (ft_strlen(dst) + ft_strlen(src));
+	sc = (const char *) s;
+	while (*sc++)
+		if (*sc == c)
+			return ((void *) sc);
+	return (NULL);
 }
