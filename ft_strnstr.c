@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 22:55:40 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/08 11:12:26 by aarbaoui         ###   ########.fr       */
+/*   Created: 2022/10/07 14:42:22 by aarbaoui          #+#    #+#             */
+/*   Updated: 2022/10/08 11:13:10 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	ret;
+	size_t	nlen;
+	size_t	slen;
 
-	ret = ft_strlen(src);
-	if (ret + 1 < dstsize)
+	slen = ft_strlen(needle);
+	while (*haystack && len)
 	{
-		ft_memcpy(dst, src, ret + 1);
+		nlen = ft_strlen(needle);
+		while ((*haystack == *needle))
+		{
+			needle++;
+			haystack++;
+			len--;
+			nlen--;
+			if (nlen == 0)
+			{
+				return ((char *)(haystack - slen));
+			}
+		}
+		haystack++;
+		len--;
 	}
-	else if (dstsize != 0)
-	{
-		ft_memcpy(dst, src, ret - 1);
-		dst[ret - 1] = '\0';
-	}
-	return (ret);
+	return (0);
 }
