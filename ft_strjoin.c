@@ -6,15 +6,15 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:23:34 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/09 15:24:57 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:02:53 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char ft_strcpy(char *dst, const char *src)
+static char	ft_strcpy(char *dst, const char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i] != '\0')
@@ -26,10 +26,10 @@ static char ft_strcpy(char *dst, const char *src)
 	return (*dst);
 }
 
-static char ft_strcat(char *dst, const char *src)
+static char	ft_strcat(char *dst, const char *src)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

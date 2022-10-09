@@ -6,22 +6,19 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:21 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/09 16:57:49 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:04:02 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-static int ft_isnset(char c, const char *set)
+static int	ft_isnset(char c, const char *set)
 {
-	while (*set++)
+	while (*set)
 	{
 		if (c == *set)
-			return (1);	
+			return (1);
+		set++;
 	}
 	return (0);
 }
@@ -31,7 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	srt;
 	unsigned int	end;
 	char			*str;
-	end = strlen(s1) - 1;
+
+	end = ft_strlen(s1) - 1;
 	srt = 0;
 	while (s1[srt] && ft_isnset(s1[srt], set))
 		srt++;
@@ -42,17 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = (char *)malloc(sizeof(char) * (end - srt + 1));
 	if (!str)
 		return (NULL);
-	ft_memcpy(str, s1 + srt, end - srt);
+	ft_strlcpy(str, s1 + srt, end - srt + 1);
 	str[end - srt] = '\0';
 	return (str);
-}
-
-int main()
-{
-	
-	char *str = "    Hello World    ";
-	char *set = " ";
-	char *ret = ft_strtrim(str, set);
-	printf("%s", ret);
-	return (0);
 }
