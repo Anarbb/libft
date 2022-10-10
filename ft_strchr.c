@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:29:11 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/07 11:40:33 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:43:35 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s++)
+	while (*s != c)
 	{
-		if (*s == '\0')
-			break ;
-		if (*s == c)
-		{
-			return ((char *)s);
-		}
+		if (!*s++)
+			return (NULL);
 	}
-	return (NULL);
+	return ((char *)s);
 }
