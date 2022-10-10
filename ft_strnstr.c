@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:42:22 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/10 22:48:30 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:52:18 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	slen = ft_strlen(needle);
 	if (!*needle || !len)
-		return (char *)haystack;
-	if (slen > (size_t)ft_strlen(haystack))
-		return (NULL);
-	while (*haystack && len)
+		return ((char *)haystack);
+	while (*haystack && len && !(slen > (size_t)ft_strlen(haystack)))
 	{
 		nlen = ft_strlen(needle);
 		while (*needle && *haystack && (*haystack == *needle))
@@ -44,17 +42,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-/*
-int main()
-{
-	char *big = "abcdef";
-	char *little = "abcdefghijklmnop";
-	size_t max = strlen(big);
-	char *s1 = strnstr(big, little, max);
-	char *s2 = ft_strnstr(big, little, max);
-
-	if (s1 == s2)
-		exit(0);
-	exit(-1);
-}
-*/
