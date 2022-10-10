@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:10:25 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/10 18:18:13 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:28:07 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-// rewrite strlcat using pointers
 	size_t	i;
 	size_t	j;
 	size_t	dst_len;
@@ -39,5 +38,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (dst_len + src_len);
 }
-
-	

@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:56 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/10 17:55:02 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:13:28 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi(const char *str)
 		i++;
 	while (48 <= str[i] && str[i] <= 57)
 	{
-		res = res * 10 + (str[i] - '0');
+		res = res * 10 + (str[i] - 48);
 		i++;
 	}
 	return (res * neg);

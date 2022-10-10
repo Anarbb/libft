@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:23:34 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/09 18:02:53 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:55:44 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	ft_strcat(char *dst, const char *src)
 {
 	int	i;
 	int	j;
-
+	
 	i = 0;
 	j = 0;
 	while (dst[i] != '\0')
