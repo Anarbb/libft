@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:21 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/10 23:05:03 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/11 00:55:54 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,36 @@ static int	ft_isnset(char c, const char *set)
 	return (0);
 }
 
+static char	ft_strcpy(char *dst, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (*dst);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	srt;
 	unsigned int	end;
 	char			*str;
 
-	end = ft_strlen(s1) - 1;
+	end = ft_strlen(s1);
 	srt = 0;
 	while (s1[srt] && ft_isnset(s1[srt], set))
 		srt++;
-	while (s1[end] && ft_isnset(s1[end - 1], set))
+	while (s1[end] && ft_isnset(s1[end], set))
 		end--;
-	if (srt > end)
-		return (ft_strdup(""));
-	str = (char *)malloc(sizeof(char) * (end - srt + 1));
+	str = (char *)malloc(sizeof(char) * (end - srt) + 1);
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1 + srt, end - srt + 1);
+	ft_strcpy(str, s1 + srt);
 	str[end - srt] = '\0';
-	return (str);
+	return ((char *)str);
 }
