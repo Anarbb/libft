@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 14:23:34 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/10 23:17:40 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:52:44 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ static char	ft_strcat(char *dst, const char *src)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if (!*s1 && !*s2)
-		return 0;
 	char	*ret;
 	size_t	s1_len;
 	size_t	s2_len;
-	
+
+	if (!*s1 && !*s2)
+		return (0);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	ret = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
