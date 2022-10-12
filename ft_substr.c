@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 13:33:03 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/12 18:38:27 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/12 21:27:05 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sbstr;
 	size_t	s_len;
-	
+
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
