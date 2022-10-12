@@ -6,7 +6,19 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:04:49 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/11 18:50:26 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/12 20:28:44 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+char	**ft_split(char const *s, char c)
+{
+	char	*str;
+	int		i;
+	
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}	
+}
