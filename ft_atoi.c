@@ -6,9 +6,11 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:56 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/11 18:49:27 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/12 22:53:46 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_isspace(char c)
 {
@@ -34,9 +36,9 @@ int	ft_atoi(const char *str)
 	}
 	else if (str[i] == '+')
 		i++;
-	while (48 <= str[i] && str[i] <= 57)
+	while (ft_isdigit(str[i]))
 	{
-		res = res * 10 + (str[i] - 48);
+		res = res * 10 + (str[i] - '0');
 		i++;
 	}
 	return (res * neg);

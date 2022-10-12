@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:04:49 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/12 22:30:50 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/12 23:12:56 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,44 @@ static int	ft_count(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	*str;
-	int		count;
-	size_t	len;
+	// add strings to array
+	char	**arr;
 	size_t	i;
+	size_t	k;
+	size_t	len;
+	int		count;
 
 	i = 0;
-	count = ft_count(s, c);
-	str = (char *)malloc(sizeof(char *) * count);
+	count = 0;
 	len = ft_strlen(s);
+	arr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
+	if (!arr)
+		return (0);
 	while (i < len)
 	{
 		while (i++ < len)
 			if (c == s[i])
 				break ;
-		str[i] = ft_substr(s, i, len);
+		k = i;
 		while (i++ < len)
 			if (!(c == s[i]))
 				break ;
+		if (i > k)
+		{
+			arr[count] = ft_substr(s, k, i - k);
+			count++;
+		}
 	}
-	// return pointer to pointer to char
-	return (**str);
+	arr[count] = NULL;
+	return (arr);
 }
 
 int main()
 {
-  // test the function
-  char s[] = "To be, or not to be, that is the question.";
-  int count_strings = 0;
-  char **split_strings = ft_split(s, ' ');
-  while (split_strings[count_strings] != NULL)
-	printf("%s", split_strings[count_strings++]);
-  return 0;
+	char *str = "Hello World";
+	char **arr = ft_split(str, ' ');
+	for (int i = 0; arr[i] != NULL; i++)
+		printf("%s", arr[i]);
+	return 0;
+	
 }
