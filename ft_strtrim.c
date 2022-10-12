@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:21 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/12 21:26:52 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/12 22:42:12 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, s1 + start, end - start + 1);
 	return (str);
 }
-/*
-#include <stdio.h>
-int main()
-{
-    char *s1 = "  \t \t \n   \n\n\n\t";
-    char *s2 = "";
-    char *ret = ft_strtrim(s1, " \n\t");
-
-    printf("%s", ret);
-}
-*/
