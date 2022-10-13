@@ -6,13 +6,13 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 15:26:21 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/12 22:42:12 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:09:04 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_gtstr(char const *s1, char const *set)
+static size_t	ft_gtstart(char const *s1, char const *set)
 {
 	int	i;
 	int	len;
@@ -54,13 +54,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	if (!set)
 		return (ft_strdup(s1));
-	start = ft_gtstr(s1, set);
+	start = ft_gtstart(s1, set);
 	end = ft_gtend(s1, set);
 	if (start >= end)
 		return (ft_strdup(""));
 	str = (char *)malloc(sizeof(char) * end - start + 1);
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s1 + start, end - start + 1);
+	ft_strlcpy(str, s1 + start, (end - start) + 1);
 	return (str);
 }
