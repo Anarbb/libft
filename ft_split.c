@@ -6,11 +6,21 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:04:49 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/13 20:30:14 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/13 21:01:01 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_freeall(char **str, int i)
+{
+	while (i >= 0)
+	{
+		free(str[i]);
+		i--;
+	}
+	free(str);
+}
 
 static int	ft_count(char const *s, char c)
 {
@@ -37,7 +47,7 @@ static int	ft_count(char const *s, char c)
 	return (count);
 }
 
-char	*ft_allocstr(char const *str, char c)
+char	*ft_allocstr(char const *str, char c, int j, char **arr)
 {
 	char	*sliced;
 	int		i;
@@ -46,6 +56,11 @@ char	*ft_allocstr(char const *str, char c)
 	while (str[i] && str[i] != c)
 		i++;
 	sliced = (char *)malloc(sizeof(char) * i + 1);
+	if (!sliced)
+	{
+		ft_freeall(arr, j);
+		return (NULL);
+	}
 	i = 0;
 	while (str[i] && str[i] != c)
 	{
@@ -71,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (*s != c)
 		{
-			arr[i] = ft_allocstr(s, c);
+			arr[i] = ft_allocstr(s, c, i, arr);
 			i++;
 			while (*s && *s != c)
 				s++;
