@@ -6,13 +6,11 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:08:56 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/14 12:54:21 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/14 13:14:21 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
 static int	ft_getintlen(int value)
 {
