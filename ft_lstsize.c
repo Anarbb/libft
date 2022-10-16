@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 12:09:40 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/16 12:13:28 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/16 13:58:49 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 int	ft_lstsize(t_list *lst)
 {
 	int	i;
-	
+
 	i = 0;
-	while(lst)
+	while (lst)
 	{
 		lst = lst->next;
 		i++;
 	}
 	return (i);
 }
-
