@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 14:44:58 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/16 17:00:49 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:46:01 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*ptr;
 	t_list	*next;
 
-	if(!del || !lst)
-		return;
+	if (!del || !lst)
+		return ;
 	ptr = *lst;
 	while (ptr)
 	{

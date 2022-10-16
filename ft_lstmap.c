@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 16:14:27 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/16 16:54:56 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:47:45 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		new = ft_lstnew(f(lst->content));
-		if(!new)		
+		if (!new)
 		{
-				ft_lstclear(&new, del);
-				free(next);
+			ft_lstclear(&new, del);
+			free(next);
 		}
 		ft_lstadd_back(&next, new);
 		lst = lst->next;
 	}
-	return next;
+	return (next);
 }
