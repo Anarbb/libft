@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:29:55 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/14 17:25:23 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/15 20:16:25 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	i;
-	
+
 	if (n > 2147483647 || n < -2147483648)
 		return ;
 	if (n == -2147483648)
+	{
 		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
 	if (n < 0)
 	{
-		n *= -1;	
+		n *= -1;
 		write(fd, "-", 1);
 	}
 	i = n;
