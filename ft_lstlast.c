@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 12:14:39 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/16 13:58:01 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:57:18 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	struct s_list	*ptr;
+	t_list	*ptr;
 
 	ptr = lst;
 	if (!ptr)

@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:31:45 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/16 15:25:40 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/16 16:51:37 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,5 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstadd_back(t_list **lst, t_list *new);
 #endif
