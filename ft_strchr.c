@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarbaoui <aarbaoui@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:29:11 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/10 17:43:35 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/17 20:13:32 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != c)
+	while (*s != (char)c)
 	{
 		if (!*s++)
 			return (NULL);
