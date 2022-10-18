@@ -6,13 +6,15 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:41 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/10 22:42:04 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/18 20:53:35 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i])
