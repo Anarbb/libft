@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 14:24:10 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/17 22:19:12 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/19 11:36:16 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	if (size > 9223372036854775807 || count > 9223372036854775807)
-		return (NULL);
 	ptr = malloc(count * size);
-	if (ptr)
-		ft_bzero(ptr, count * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count * size);
 	return (ptr);
 }
