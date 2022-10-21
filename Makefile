@@ -6,7 +6,7 @@
 #    By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 10:39:48 by aarbaoui          #+#    #+#              #
-#    Updated: 2022/10/19 11:42:42 by aarbaoui         ###   ########.fr        #
+#    Updated: 2022/10/21 17:10:49 by aarbaoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft
 BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
 OBJ = $(SRC:.c=.o)
 OBJBONUS = $(BONUS:.c=.o)
+HEADER = libft.h
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-
 
 all: ${NAME}
 
@@ -25,7 +25,7 @@ ${NAME}:${SRC}
 	${CC} ${CFLAGS} -c ${SRC}
 	ar rc ${NAME} ${OBJ}
 
-bonus:
+bonus:${NAME}
 	${CC} ${CFLAGS} -c ${BONUS}
 	ar rc ${NAME} ${OBJBONUS}
 
