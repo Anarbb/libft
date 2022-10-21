@@ -6,7 +6,7 @@
 #    By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 10:39:48 by aarbaoui          #+#    #+#              #
-#    Updated: 2022/10/21 17:10:49 by aarbaoui         ###   ########.fr        #
+#    Updated: 2022/10/21 18:21:30 by aarbaoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,19 @@ OBJ = $(SRC:.c=.o)
 OBJBONUS = $(BONUS:.c=.o)
 HEADER = libft.h
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all: ${NAME}
 
-${NAME}:${SRC}
-	${CC} ${CFLAGS} -c ${SRC}
+${NAME}:${OBJ}
 	ar rc ${NAME} ${OBJ}
 
-bonus:${NAME}
-	${CC} ${CFLAGS} -c ${BONUS}
+bonus:${OBJBONUS}
 	ar rc ${NAME} ${OBJBONUS}
+
+%.o : %.c ${HEADER}
+	${CC} ${CFLAGS} -c $<
 
 clean:
 	rm -f ${OBJ} ${OBJBONUS}
@@ -35,6 +36,6 @@ clean:
 fclean: clean
 	rm -f ${NAME}
 
-re:	fclean all
+re:	fclean all bonus
 
 .PHONY: all clean fclean re bonus
