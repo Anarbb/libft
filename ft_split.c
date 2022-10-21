@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 21:04:49 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/20 16:38:59 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:44:42 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_allocstr(char const *str, char c, int j, char **arr)
 	sliced[i] = 0;
 	return (sliced);
 }
-
+// , '-'
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
@@ -79,19 +79,19 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	i = 0;
-	arr = (char **)malloc(sizeof(char **) * ft_count(s, c) + 1);
+	while (*s && *s == c)
+		s++;
+	int n = ft_count(s, c);
+	arr = (char **)malloc(sizeof(char *) * n + 1);
 	if (!arr)
 		return (NULL);
-	while (*s)
+	while (i < n)
 	{
-		if (*s != c)
-		{
-			arr[i] = ft_allocstr(s, c, i, arr);
-			i++;
-			while (*s && *s != c)
-				s++;
-		}
-		if (*s)
+		while (*s && *s == c)
+			s++;
+		arr[i] = ft_allocstr(s, c, i, arr);
+		i++;
+		while (*s && *s != c)
 			s++;
 	}
 	arr[i] = NULL;
