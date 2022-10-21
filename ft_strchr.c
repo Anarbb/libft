@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 21:29:11 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/21 16:50:11 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/21 17:57:40 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-
 	while (*s != (char)c)
 	{
 		if (!*s++)
