@@ -6,7 +6,7 @@
 #    By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 10:39:48 by aarbaoui          #+#    #+#              #
-#    Updated: 2022/10/21 18:51:15 by aarbaoui         ###   ########.fr        #
+#    Updated: 2022/10/22 19:48:57 by aarbaoui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,19 +22,19 @@ CFLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}:${OBJ}
-	ar rc $@ $^
+	@ar rc $@ $^
 
 bonus:${OBJBONUS}
-	ar rc ${NAME} $^
+	@ar rc ${NAME} $^
 
 %.o : %.c ${HEADER}
 	${CC} ${CFLAGS} -c $< 
 
 clean:
-	rm -f ${OBJ} ${OBJBONUS}
+	@rm -f ${OBJ} ${OBJBONUS}
 
 fclean: clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re:	fclean all bonus
 

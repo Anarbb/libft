@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:18:56 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/21 19:03:52 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/22 19:46:55 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@ static int	ft_isspace(char c)
 	return (c == ' ' || c == '\v' || c == '\t'
 		|| c == '\r' || c == '\f' || c == '\n');
 }
-static	int ft_check(const char *str)
+
+static int	ft_check(const char *str)
 {
-	if (ft_strlen(str) >= 19 && ft_strncmp(str , "9223372036854775807", 19) >= 0)
+	if ((ft_strlen(str) >= 19)
+		&& (ft_strncmp(str, "9223372036854775807", 19) >= 0))
 		return (-1);
-	if (ft_strlen(str) >= 20 && ft_strncmp(str , "-9223372036854775808", 20) >= 0)
+	if (ft_strlen(str) >= 20
+		&& ft_strncmp(str, "-9223372036854775808", 20) >= 0)
 		return (0);
 	return (1);
 }	
@@ -49,9 +52,6 @@ int	ft_atoi(const char *str)
 	else if (str[i] == '+')
 		i++;
 	while (ft_isdigit(str[i]))
-	{
-		res = res * 10 + (str[i] - '0');
-		i++;
-	}
+		res = res * 10 + (str[i++] - '0');
 	return (res * neg);
 }
