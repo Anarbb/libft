@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 19:16:55 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/21 17:28:02 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/23 14:18:12 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *b, int c, int len)
 	p = (unsigned char *) b;
 	while (0 < len--)
 	{
-		*p++ = c;
+		*p++ = (unsigned char) c;
 	}
 	return (b);
 }
