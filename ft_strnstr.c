@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 14:42:22 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/23 16:40:05 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/10/24 16:20:15 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	if (len == 0 && !haystack)
 		return (NULL);
 	i = 0;
