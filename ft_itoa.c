@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:08:56 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/27 13:05:56 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/03/29 01:02:07 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,13 @@ static int	ft_getintlen(int value)
 	return (len);
 }
 
-static int	ft_isneg(int n)
-{
-	if (n < 0)
-		return (1);
-	return (0);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*str;
 	int		len;
-	int		neg;
 	
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	neg = ft_isneg(n);
 	len = ft_getintlen(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
